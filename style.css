@@ -26,12 +26,52 @@ video {
     top: 20px;
     right: 20px;
     border: 2px solid black;
-    border-radius: 50px;
+    border-radius: 50%;
 }
+
 .logo {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
     border: 2px solid white;
-    border-radius: 50px;
+    border-radius: 50%;
 }
+
+.tiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tile {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .tile-github {
+    background-color: transparent #24292e;
+    color: white;
+  }
+  
+  .tile-linkedin {
+    background-color: #0077b5;
+    color: white;
+  }
+  
+  .tile-resume {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .tile i {
+    font-size: 50px;
+  }
+  
+  .tile span {
+    font-size: 20px;
+    text-transform: uppercase;
+  }

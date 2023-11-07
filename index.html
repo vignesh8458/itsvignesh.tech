@@ -5,15 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vignesh Vijayakumar</title>
+    <link rel="icon" type="image/x-icon" href="/images/dp.jpg">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
-<body>
+ <body>
         <div class="container">
-            <video autoplay muted loop disablePictureInPicture>
-                <source src="/images/background">
+            <video autoplay muted loop disablePictureInPicture playsinline style="pointer-events: none;" >
+                <source src="/images/background.mp4">
             </video>
-           
-          
         </div>
-</body>
+        <div id="tiles"></div>
+
+        <div class="logo-wrapper">
+            <img class="logo" src="/images/dp.jpg" alt="User Avatar">
+        </div> 
+
+        <div class="tiles">
+            <a href="https://github.com/vignesh8458?tab=repositories" class="tile tile-github">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/vignesh-vijayakumar-b65b68155/" class="tile tile-linkedin">
+              <i class="fa-brands fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="/doc/resume.pdf" class="tile tile-resume">
+              <i class="fa-solid fa-file-pdf"></i>
+              <span>Resume</span>
+            </a>
+          </div>
+       
+ </body>
 </html>
