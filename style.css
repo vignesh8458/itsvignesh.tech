@@ -32,7 +32,7 @@ video {
 .logo {
     width: 100%;
     height: 100%;
-    border: 2px solid white;
+    /* border: 2px solid white; */
     border-radius: 50%;
 }
 
@@ -40,19 +40,34 @@ video {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    gap: 25px;
   }
   
   .tile {
-    width: 200px;
-    height: 200px;
+    /* width: 200px;
+    height: 200px; */
     margin: 10px;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .icon-github {
+    background-color: #fff;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    display: block;
+    background-position: center;
+  }
   
-  .tile-github {
+  /* .tile-github {
     background-color: #24292e;
     color: white;
   }
@@ -65,7 +80,7 @@ video {
   .tile-resume {
     background-color: #3498db;
     color: white;
-  }
+  } */
   
   .tile i {
     font-size: 50px;
