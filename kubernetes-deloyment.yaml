@@ -17,11 +17,12 @@ kind: Route
 metadata: 
   name: nginx-route 
 spec: 
-  host: nginx.my-openshift-project.com 
+  path: /
   to: 
     kind: Service 
     name: nginx-service 
-    weight: 100
+  Port:
+    targetPort: 80
 
 ---
 apiVersion: apps/v1
