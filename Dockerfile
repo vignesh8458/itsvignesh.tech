@@ -7,4 +7,6 @@ COPY ./web/ /usr/share/nginx/html/
 
 # RUN proxy_pass http://pwm-node:3000;
 
+EXPOSE 80
+
 RUN ls -lrt

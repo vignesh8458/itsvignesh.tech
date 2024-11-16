@@ -7,8 +7,8 @@ spec:
     app: nginx
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 80
+      targetPort: 80
 
 ---
 
@@ -22,7 +22,7 @@ spec:
     kind: Service 
     name: nginx
   Port:
-    targetPort: 8080
+    targetPort: 80
 
 ---
 apiVersion: apps/v1
@@ -44,4 +44,4 @@ spec:
           image: registry.hub.docker.com/viggyvijay/itsvignesh.tech
           tag: latest
           ports:
-            - containerPort: 8080
+            - containerPort: 80
