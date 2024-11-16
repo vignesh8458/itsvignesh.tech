@@ -42,7 +42,7 @@ jobs:
           name: Deploy to OpenShift cloud
           command: |
             TAG=0.1.$CIRCLE_BUILD_NUM
-            oc set image deployment/nginx-deployment nginx=your-dockerhub-username/my-nginx-website:$TAG
+            oc set image deployment/nginx-deployment nginx=your-dockerhub-username/my-nginx-website:$TAG -n vignesh8458-dev
 
 
 workflows:
