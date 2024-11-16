@@ -1,4 +1,14 @@
 apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: for-vignesh8458-services
+spec:
+  hard:
+    services.loadbalancers: "1"
+
+---
+
+apiVersion: v1
 kind: Service
 metadata:
   name: nginx-service
