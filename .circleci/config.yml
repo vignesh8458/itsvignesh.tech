@@ -25,7 +25,12 @@ jobs:
             docker push viggyvijay/itsvignesh.tech:$TAG
       - run:
           name: Login to OpenShift
-          command: oc login --token=sha256~q6cQgl4FhO0oYFTyhDKAbc1JrIV55AB08Dl7ycpFGBw --server=https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443
+          command: |
+             wget https://github.com/openshift/okd/releases/download/4.5.0-0.okd-2020-07-14-153706-ga/openshift-client-linux-4.5.0-0.okd-2020-07-14-153706-ga.tar.gz
+             tar -xvf openshift-client-linux-4.5.0-0.okd-2020-07-14-153706-ga.tar.gz
+             sudo mv oc kubectl /usr/local/bin/
+             oc version
+             oc login --token=sha256~q6cQgl4FhO0oYFTyhDKAbc1JrIV55AB08Dl7ycpFGBw --server=https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443
       - run:
           name: Deploy to OpenShift cloud
           command: oc apply -f your-openshift-deployment.yaml -n vignesh8458-dev
