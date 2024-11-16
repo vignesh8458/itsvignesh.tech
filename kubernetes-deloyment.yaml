@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: viggyvijay/itsvignesh.tech
+          image: docker.io/viggyvijay/itsvignesh.tech
           tag: latest
           ports:
             - containerPort: 80
