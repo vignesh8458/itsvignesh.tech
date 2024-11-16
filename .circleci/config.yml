@@ -16,7 +16,7 @@ jobs:
           name: Build Docker Image
           command: |
             TAG=$CIRCLE_BUILD_NUM
-            docker build -t viggyvijay/itsvignesh.tech:$TAG .
+            docker build -t viggyvijay/itsvignesh.tech:$TAG . --no-cache
       - run:
           name: Push Docker Image
           command: |
