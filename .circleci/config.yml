@@ -23,6 +23,13 @@ jobs:
             TAG=0.1.$CIRCLE_BUILD_NUM
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
             docker push viggyvijay/itsvignesh.tech:$TAG
+     
+
+  deploy:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - checkout
       - run:
           name: Login to OpenShift
           command: |
@@ -33,19 +40,11 @@ jobs:
              oc login --token=sha256~q6cQgl4FhO0oYFTyhDKAbc1JrIV55AB08Dl7ycpFGBw --server=https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443
       - run:
           name: Deploy to OpenShift cloud
-          command: oc apply -f kubernetes-deloyment.yaml -n vignesh8458-dev
+          command: |
+            TAG=0.1.$CIRCLE_BUILD_NUM
+            oc apply -f kubernetes-deloyment.yaml  -n vignesh8458-dev
+            oc set image deployment/nginx-deployment nginx=your-dockerhub-username/my-nginx-website:$TAG
 
-  deploy:
-    docker:
-      - image: cimg/base:current
-    steps:
-      - checkout
-      - run:
-          name: Login to OpenShift
-          command: oc login --token=sha256~q6cQgl4FhO0oYFTyhDKAbc1JrIV55AB08Dl7ycpFGBw --server=https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443
-      - run:
-          name: Deploy to OpenShift cloud
-          command: oc apply -f kubernetes-deloyment.yaml -n vignesh8458-dev
 
 workflows:
   version: 2
