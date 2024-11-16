@@ -1,5 +1,5 @@
 # Use the official NGINX image from Docker Hub
-FROM nginx:alpine
+FROM nginxinc/nginx-unprivileged
 
 RUN mkdir -p /var/cache/nginx /var/log/nginx /var/run/nginx /var/www/html /var/cache/nginx/client_temp  /var/cache/nginx/proxy_temp
 # Copy your website files into the NGINX html directory
