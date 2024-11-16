@@ -28,6 +28,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: viggyvijay/itsvignesh.tech:latest
+          image: viggyvijay/itsvignesh.tech
+          tag: latest
           ports:
             - containerPort: 80
