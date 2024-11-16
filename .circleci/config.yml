@@ -10,12 +10,12 @@ jobs:
           version: 20.10.7
       - run:
           name: Build Docker Image
-          command: docker build -t your-dockerhub-username/my-nginx-website .
+          command: docker build -t your-dockerhub-username/my-nginx-website:$CIRCLE_BUILD_NUM .
       - run:
           name: Push Docker Image
           command: |
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-            docker push your-dockerhub-username/my-nginx-website
+            docker push viggyvijay/itsvignesh.tech:$CIRCLE_BUILD_NUM
 
   deploy:
     docker:
@@ -24,10 +24,10 @@ jobs:
       - checkout
       - run:
           name: Login to OpenShift
-          command: oc login $OPENSHIFT_SERVER --token=$OPENSHIFT_TOKEN
+          command: oc login --token=sha256~q6cQgl4FhO0oYFTyhDKAbc1JrIV55AB08Dl7ycpFGBw --server=https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443
       - run:
           name: Deploy to OpenShift
-          command: oc apply -f your-openshift-deployment.yaml
+          command: oc apply -f your-openshift-deployment.yaml -n vignesh8458-dev
 
 workflows:
   version: 2
