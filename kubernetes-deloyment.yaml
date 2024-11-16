@@ -38,6 +38,7 @@ spec:
     metadata:
       labels:
         app: nginx
+        test: image-viggyvijay/itsvignesh.tech
     spec:
       containers:
         - name: nginx
