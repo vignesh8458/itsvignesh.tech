@@ -43,7 +43,7 @@ jobs:
           command: |
             TAG=0.1.$CIRCLE_BUILD_NUM
             oc apply -f kubernetes-deloyment.yaml -n vignesh8458-dev
-            oc set image deployment/nginx-deployment nginx=viggyvijay/itsvignesh.tech:$TAG -n vignesh8458-dev
+            oc set image deployment/nginx-deployment nginx=registry.hub.docker.com/viggyvijay/itsvignesh.tech:$TAG -n vignesh8458-dev
             oc get pods -n vignesh8458-dev
 
 
