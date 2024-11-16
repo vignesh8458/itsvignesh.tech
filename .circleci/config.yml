@@ -33,7 +33,7 @@ jobs:
           name: Login to OpenShift
           command: oc login --token=sha256~q6cQgl4FhO0oYFTyhDKAbc1JrIV55AB08Dl7ycpFGBw --server=https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443
       - run:
-          name: Deploy to OpenShift
+          name: Deploy to OpenShift cloud
           command: oc apply -f your-openshift-deployment.yaml -n vignesh8458-dev
 
 workflows:
