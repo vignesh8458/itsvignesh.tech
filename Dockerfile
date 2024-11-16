@@ -2,7 +2,7 @@
 FROM nginx:latest
 
 # Copy your website files into the NGINX html directory
-COPY . /usr/share/nginx/html
+COPY . /usr/share/nginx/html/
 
 # Expose port 80
 EXPOSE 80
