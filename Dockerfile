@@ -1,6 +1,8 @@
 # Use the official NGINX image from Docker Hub
 FROM nginx:latest
 
+USER root
+
 RUN mkdir -p /var/cache/nginx /var/log/nginx /var/run/nginx /var/www/html
 # Copy your website files into the NGINX html directory
 COPY . /usr/share/nginx/html/
