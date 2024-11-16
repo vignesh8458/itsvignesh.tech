@@ -3,7 +3,7 @@ FROM nginx:latest
 
 USER root
 
-RUN mkdir -p /var/cache/nginx /var/log/nginx /var/run/nginx /var/www/html /var/cache/nginx/client_temp
+RUN mkdir -p /var/cache/nginx /var/log/nginx /var/run/nginx /var/www/html /var/cache/nginx/client_temp  /var/cache/nginx/proxy_temp
 # Copy your website files into the NGINX html directory
 COPY . /usr/share/nginx/html/
 
