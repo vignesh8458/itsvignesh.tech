@@ -42,6 +42,7 @@ jobs:
       - run:
           name: Deploy to OpenShift cloud
           command: |
+            echo $TAG
             oc apply -f kubernetes-deloyment.yaml -n vignesh8458-dev
             oc set image deployment/nginx-deployment nginx=registry.hub.docker.com/viggyvijay/itsvignesh.tech:$TAG -n vignesh8458-dev
             oc get pods -n vignesh8458-dev
