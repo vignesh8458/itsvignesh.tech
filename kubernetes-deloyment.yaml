@@ -18,7 +18,7 @@ metadata:
 spec: 
   path: /
   to: 
-    kind: Service 
+    kind: Service
     name: nginx
   Port:
     targetPort: 8080
