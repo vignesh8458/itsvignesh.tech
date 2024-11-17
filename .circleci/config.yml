@@ -23,7 +23,7 @@ jobs:
             TAG=$CIRCLE_BUILD_NUM
             echo $TAG
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-            docker push viggyvijay/itsvignesh.tech:$TAG
+            docker push viggyvijay/www.itsvignesh.tech:$TAG
      
 
   deploy:
@@ -45,7 +45,7 @@ jobs:
             TAG=$CIRCLE_BUILD_NUM
             TAG=$((TAG - 1))
             echo $TAG
-            oc apply -f kubernetes-deloyment.yaml -n vignesh8458-dev
+            oc apply -f kubernetes-deployment.yaml -n vignesh8458-dev
             oc set image deployment/nginx-deployment nginx=registry.hub.docker.com/viggyvijay/itsvignesh.tech:$TAG -n vignesh8458-dev
             oc get pods -n vignesh8458-dev
 
