@@ -23,7 +23,7 @@ jobs:
             TAG=$CIRCLE_BUILD_NUM
             echo $TAG
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-            docker push viggyvijay/www.itsvignesh.tech:$TAG
+            docker push viggyvijay/itsvignesh.tech:$TAG
      
 
   deploy:
